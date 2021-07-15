@@ -39,11 +39,6 @@ export const MainInfoContainer = styled.div`
   margin-bottom: 30px;
   padding: 20px 15px;
 
-  img {
-    width: 140px;
-    height: 140px;
-  }
-
   > div {
     display: flex;
     flex-direction: column;
@@ -134,12 +129,6 @@ export const Carousel = styled.div`
     span {
       font-size: 12px;
       font-weight: 300;
-    }
-
-    img {
-      width: 40px;
-      height: 40px;
-      object-fit: cover;
     }
 
     p {

@@ -1,5 +1,4 @@
 import { InputHTMLAttributes, memo, useEffect, useRef } from 'react';
-import { NextPage } from 'next';
 import { useField } from '@unform/core';
 import { FiAlertCircle, FiSearch } from 'react-icons/fi';
 
@@ -11,7 +10,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
 }
 
-const Input: NextPage<Props> = ({ name, ...rest }) => {
+const Input = ({ name, ...rest }: Props): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const { fieldName, defaultValue = '', error, registerField } = useField(name);

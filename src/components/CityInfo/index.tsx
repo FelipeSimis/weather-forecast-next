@@ -1,5 +1,4 @@
 import { useCallback, WheelEvent } from 'react';
-import { NextPage } from 'next';
 import Image from 'next/image';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
@@ -20,7 +19,7 @@ interface Props {
   main: WeatherMainData;
 }
 
-const CityInfo: NextPage<Props> = ({ hourly, main }) => {
+const CityInfo = ({ hourly, main }: Props): JSX.Element => {
   const convertTimestampToHumanDate = useCallback(
     (timestamp: number | string) => {
       return `${new Date(Number(timestamp) * 1000).toLocaleTimeString('en-us', {
@@ -62,8 +61,10 @@ const CityInfo: NextPage<Props> = ({ hourly, main }) => {
           <Image
             src={`https://openweathermap.org/img/wn/${main.weather[0].icon}@2x.png`}
             alt={main.weather[0].description}
-            width="auto"
-            height="auto"
+            width={140}
+            height={140}
+            objectFit="cover"
+            priority
           />
 
           <div>
@@ -139,8 +140,9 @@ const CityInfo: NextPage<Props> = ({ hourly, main }) => {
                 <Image
                   src={`https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`}
                   alt={forecast.weather[0].description}
-                  width="auto"
-                  height="auto"
+                  width={40}
+                  height={40}
+                  objectFit="cover"
                 />
 
                 <p>{forecast.main.temp.toFixed(0)}°</p>

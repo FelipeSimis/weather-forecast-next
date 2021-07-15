@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 
   background: url('/background.jpg') no-repeat center;
+  background-color: #89a7ef;
   background-size: cover;
 `;
 
